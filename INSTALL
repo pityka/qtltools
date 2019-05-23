@@ -1,0 +1,10 @@
+HOW TO BUILD
+============
+
+Build for linux on centos7 with the provided Makefile. 
+
+1) docker build .  # will print the image hash
+2) docker run -it -v `pwd`:/opt IMAGEHASH /bin/bash -c 'cd /opt && make -f Makefile.static'
+3) you can remove the image if you want, the binary is in bin/
+
+Most of the dependencies are statically linked except libm and libpthread.
