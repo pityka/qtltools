@@ -11,10 +11,12 @@ GSL_LIB=/usr/local/Cellar/gsl/2.5/lib/
 #COMPILER MODE C++11
 CXX=g++ -std=c++0x
 
+GIT_VERSION := "$(shell git describe --dirty)"
+
 #COMPILER FLAGS
 CXXFLAG_REL=-O2
 CXXFLAG_WRN=-Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated -Wno-unused-parameter -Wno-ignored-attributes -Wno-misleading-indentation
-CXXFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN)
+CXXFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN) -DQTLTOOLS_VERSION=\"$(GIT_VERSION)\"
 LDFLAG=$(CXXFLAG_REL)
 #BASE LIBRARIES
 LIB_FLAGS= -lz $(GSL_LIB)/libgsl.a -lblas -lbz2 -lm -lpthread 

@@ -9,11 +9,13 @@ BOOST_LIB=/usr/lib/x86_64-linux-gnu
 #COMPILER MODE C++11
 CXX=g++ -std=c++0x
 
+GIT_VERSION := "$(shell git describe --dirty)"
+
 #COMPILER FLAGS
 CXXFLAG_REL=-O2
 CXXFLAG_DBG=-g -DDEBUG
 CXXFLAG_WRN=-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated -Wno-unused-parameter
-CXXFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN)
+CXXFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN) -DQTLTOOLS_VERSION=\"$(GIT_VERSION)\"
 LDFLAG=$(CXXFLAG_REL)
 
 #BASE LIBRARIES

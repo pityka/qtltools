@@ -19,8 +19,6 @@
 #include "otools.h"
 #include "filter.h"
 
-#define QTLTOOLS_VERSION "1.1"
-
 class data {
 public:
 	//SAMPLES

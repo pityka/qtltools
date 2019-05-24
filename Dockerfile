@@ -46,4 +46,6 @@ RUN mkdir liblzma_TEMP && cd liblzma_TEMP && \
     ./configure --disable-shared && \
     make
 
-CMD make
+RUN yum install -y git
+
+CMD cd /opt && make -f Makefile.static
